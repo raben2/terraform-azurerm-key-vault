@@ -1,3 +1,8 @@
+terraform module azurerm key-vault
+==================================
+
+Use this module to create key-vault instances for your services running on azure
+
 ## Requirements
 
 | Name | Version |
@@ -39,3 +44,17 @@
 | key-vault-id | Key Vault ID |
 | key-vault-url | Key Vault URI |
 
+## Development
+
+### Prerequisites
+
+- [terraform](https://learn.hashicorp.com/terraform/getting-started/install#installing-terraform)
+- [terraform-docs](https://github.com/segmentio/terraform-docs)
+- [pre-commit](https://pre-commit.com/#install)
+
+### Configurations
+
+- Configure pre-commit hooks
+```sh
+pre-commit install
+```
