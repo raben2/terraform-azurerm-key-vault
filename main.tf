@@ -24,12 +24,12 @@ resource "azurerm_key_vault" "secrets" {
   enabled_for_deployment          = var.deployment_enabled
   enabled_for_template_deployment = var.template_deployment_enabled
 
-  tags                            = var.tags
+  tags = var.tags
 
   network_acls {
-    default_action                = "Allow"
-    bypass                        = "AzureServices"
-    virtual_network_subnet_ids    = var.allowed_subnet_ids
+    default_action             = "Allow"
+    bypass                     = "AzureServices"
+    virtual_network_subnet_ids = var.allowed_subnet_ids
   }
 
 }
@@ -43,10 +43,10 @@ resource "azurerm_key_vault_access_policy" "default" {
     create_before_destroy = true
   }
 
-  key_permissions = var.key_permissions_all
-  secret_permissions = var.secrets_permissions_all
+  key_permissions         = var.key_permissions_all
+  secret_permissions      = var.secrets_permissions_all
   certificate_permissions = var.cert_permissions_all
-  storage_permissions = var.storage_permissions_all
+  storage_permissions     = var.storage_permissions_all
 }
 
 resource "azurerm_key_vault_access_policy" "custom" {
@@ -57,7 +57,6 @@ resource "azurerm_key_vault_access_policy" "custom" {
   lifecycle {
     create_before_destroy = true
   }
-
   object_id               = lookup(each.value, "object_id")
   key_permissions         = lookup(each.value, "key_permissions")
   secret_permissions      = lookup(each.value, "secret_permissions")
