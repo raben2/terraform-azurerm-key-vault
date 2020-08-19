@@ -29,7 +29,7 @@ Use this module to create key-vault instances for your services running on azure
 | key\_permissions\_all | List of full key permissions, must be one or more from the following: backup, create, decrypt, delete, encrypt, get, import, list, purge, recover, restore, sign, unwrapKey, update, verify and wrapKey. | `list(string)` | <pre>[<br>  "backup",<br>  "create",<br>  "decrypt",<br>  "delete",<br>  "encrypt",<br>  "get",<br>  "import",<br>  "list",<br>  "purge",<br>  "recover",<br>  "restore",<br>  "sign",<br>  "unwrapKey",<br>  "update",<br>  "verify",<br>  "wrapKey"<br>]</pre> | no |
 | name | main name for the instance | `string` | `"KV"` | no |
 | purge\_protection | Enable/Disable purge protection | `bool` | `false` | no |
-| resource\_group\_name | n/a | `string` | `""` | no |
+| resource\_group\_name | name of the main resource group | `string` | `""` | no |
 | secrets | Define Azure Key Vault secrets | <pre>map(object({<br>    value = string<br>  }))</pre> | `{}` | no |
 | secrets\_permissions\_all | List of full secret permissions, must be one or more from the following: backup, create, decrypt, delete, encrypt, get, import, list, purge, recover, restore, sign, unwrapKey, update, verify and wrapKey. | `list(string)` | <pre>[<br>  "backup",<br>  "delete",<br>  "get",<br>  "list",<br>  "purge",<br>  "recover",<br>  "restore",<br>  "set"<br>]</pre> | no |
 | sku\_name | Select Standard or Premium SKU | `string` | `"standard"` | no |
@@ -44,6 +44,7 @@ Use this module to create key-vault instances for your services running on azure
 |------|-------------|
 | key-vault-id | Key Vault ID |
 | key-vault-url | Key Vault URI |
+
 
 ## Development
 
