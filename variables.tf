@@ -9,7 +9,11 @@ variable "environment" {
   type        = string
   default     = "dev"
 }
-
+variable "resource_group_name" {
+  desription = "name of the main resource group"
+  type       = string
+  default    = ""
+}
 variable "sku_name" {
   type        = string
   description = "Select Standard or Premium SKU"
