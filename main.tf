@@ -6,9 +6,7 @@ provider "azurerm" {
     }
   }
 }
-data "azurerm_resource_group" "main" {
-  name = data.azurerm_resource_group.main.name
-}
+data "azurerm_resource_group" "main" {}
 
 data "azurerm_client_config" "current" {}
 
